@@ -1,7 +1,5 @@
 from django import forms
-
-from .models import Group, PushInformation, SubscriptionInfo
-
+from . models import Group, PushInformation, SubscriptionInfo
 
 
 class WebPushForm(forms.Form):
@@ -19,7 +17,7 @@ class WebPushForm(forms.Form):
 
         if group_name:
             group, created = Group.objects.get_or_create(name=group_name)
-            data["group"] =  group
+            data["group"] = group
 
         data["subscription"] = subscription
 
@@ -37,7 +35,6 @@ class SubscriptionForm(forms.ModelForm):
     class Meta:
         model = SubscriptionInfo
         fields = ('browser', 'endpoint', 'auth', 'p256dh')
-
 
     def get_or_save(self, subscription_data):
         subscription, created = SubscriptionInfo.objects.get_or_create(**subscription_data)

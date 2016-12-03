@@ -1,14 +1,12 @@
 import json
 
 from django.conf import settings
-from django.core.exceptions import FieldError
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST, require_GET
 
-from .config import MANIFEST
-from .forms import WebPushForm, SubscriptionForm
+from . config import MANIFEST
+from . forms import WebPushForm, SubscriptionForm
 
 
 @require_POST
@@ -54,7 +52,7 @@ def save_info(request):
 
 @require_GET
 def generate_manifest(request):
-    if hasattr(settings,'WEBPUSH_SETTINGS'):
+    if hasattr(settings, 'WEBPUSH_SETTINGS'):
         return JsonResponse(MANIFEST)
     else:
         return HttpResponse(status=404)
