@@ -15,23 +15,22 @@ setup(
     license='GNU Public License',
     description='A simple Django package to integrate Web Push Notification in your Application',
     long_description=README,
-    url='https://www.github.com/safwanrahman/django-webpush',
     author='Safwan Rahman',
     author_email='safwan.rahman15@gmail.com',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.8',
+        'Framework :: Django :: 1.10',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
     install_requires=[
-        'pywebpush==0.4.0'
+        'pywebpush==0.6.1'
     ]
 )
